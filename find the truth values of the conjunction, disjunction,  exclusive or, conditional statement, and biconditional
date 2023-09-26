@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std; // Add this line to use the std namespace
+
+int main() {
+    // Define the truth values of propositions p and q
+    bool p = true; // Change this to true or false as needed
+    bool q = false; // Change this to true or false as needed
+
+    // Conjunction (AND)
+    bool conjunction = p && q;
+
+    // Disjunction (OR)
+    bool disjunction = p || q;
+
+    // Exclusive OR (XOR)
+    bool exclusiveOr = (p || q) && !(p && q);
+
+    // Conditional statement (implies)
+    bool implies = !p || q;
+
+    // Biconditional (if and only if)
+    bool biconditional = (p && q) || (!p && !q);
+
+    // Print the results
+    cout << "p: " << p << endl;
+    cout << "q: " << q << endl;
+    cout << "Conjunction (AND): " << conjunction << endl;
+    cout << "Disjunction (OR): " << disjunction << endl;
+    cout << "Exclusive OR (XOR): " << exclusiveOr << endl;
+    cout << "Conditional statement (implies): " << implies << endl;
+    cout << "Biconditional (if and only if): " << biconditional << endl;
+
+    return 0;
+}
