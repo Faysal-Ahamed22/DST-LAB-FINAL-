@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std; 
+
+
+int recursiveOperations = 0;
+int iterativeOperations = 0;
+
+int fibRecursive(int n) {
+    recursiveOperations++; 
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibRecursive(n - 1) + fibRecursive(n - 2);
+    }
+}
+
+int fibIterative(int n) {
+    if (n <= 1) {
+        return n;
+    }
+
+    int prev = 0;
+    int current = 1;
+    int result = 0;
+
+    for (int i = 2; i <= n; i++) {
+        iterativeOperations++; 
+        result = prev + current;
+        prev = current;
+        current = result;
+    }
+
+    return result;
+}
+
+int main() {
+    int n = 10; 
+
+    int recursiveResult = fibRecursive(n);
+    cout << "Fibonacci(" << n << ") using recursion: " << recursiveResult << endl;
+    cout << "Number of operations (recursive): " << recursiveOperations << endl;
+
+    int iterativeResult = fibIterative(n);
+    cout << "Fibonacci(" << n << ") using iteration: " << iterativeResult << endl;
+    cout << "Number of operations (iterative): " << iterativeOperations << endl;
+
+    return 0;
+}
