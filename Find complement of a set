@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+int main() {
+  
+    int n; cin>>n; 
+    set<int>A; 
+    for(int i=0; i<n; i++)
+    {
+        int a ; 
+        cin>>a ; A.insert(a);
+
+    }
+   //set b zeitar sapekkhe compliment ber korbo 
+     int m; cin>>m; 
+    set<int>B; 
+    for(int i=0; i<m; i++)
+    {
+        int a ; 
+        cin>>a ; B.insert(a);
+
+    }
+   // Create a set to store the complement of B in A
+    set<int> complement;
+
+    // Iterate through set A and check if each element is in set B
+    for (const int& element : A) {
+        if (B.find(element) == B.end()) {
+            // Element is not in B, so it's in the complement
+            complement.insert(element);
+        }
+    }
+
+    // Print the complement set
+    cout << "Complement of B in A: ";
+    for (const int& element : complement) {
+        cout << element << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
