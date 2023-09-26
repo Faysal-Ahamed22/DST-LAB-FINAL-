@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std; 
+
+
+int main() {
+   int n,m; 
+   cin>>n; 
+   vector<int>setA(n);
+   map<int, int>m1,m2; 
+   for(int i=0; i<n; i++)
+   {
+    cin>>setA[i];
+    m1[setA[i]]++; 
+   }
+   cin>>m; 
+   vector<int>setB(m);
+   for(int i=0; i<m; i++)
+   {
+    cin>>setB[i];
+    m2[setB[i]]++; 
+   }
+
+
+    // Calculate and print the Cartesian product
+    cout << "Cartesian Product:" << endl;
+    for (const int& elementA : setA) {
+        for (const int& elementB : setB) {
+            cout << "(" << elementA << ", " << elementB << ") ";
+        }
+    }
+    cout << endl;
+    cout<<"symmetric difference :"<<endl; 
+
+    //  symmetric difference element present either set a or b , but not in both set ..2
+    set<int> symmetricDifference;
+    for(int i=0; i<n; i++)if( m2[setA[i]]==0)symmetricDifference.insert(setA[i]);
+    for(int i=0; i<m; i++)if( m1[setB[i]]==0)symmetricDifference.insert(setB[i]);
+    for(auto u:symmetricDifference)cout<<u<<" ";
+    cout<<endl;
+
+  
+
+
+    return 0;
+}
