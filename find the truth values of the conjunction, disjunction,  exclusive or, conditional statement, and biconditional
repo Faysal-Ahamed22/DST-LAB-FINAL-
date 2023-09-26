@@ -14,7 +14,10 @@ int main() {
     bool disjunction = p || q;
 
     // Exclusive OR (XOR)
-    bool exclusiveOr = (p || q) && !(p && q);
+    bool exclusiveOr;
+   if(p==q) exclusiveOr=0; 
+   else  exclusiveOr=1; 
+   
 
     // Conditional statement (implies)
     bool implies = !p || q;
